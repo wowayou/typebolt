@@ -95,7 +95,10 @@ npm run test:e2e       # Playwright 端到端（无头 Chromium，加载未打�
 npm test               # 单元 + 端到端
 npm run icons          # 用 Playwright 把 icons/icon.svg 渲染为 16/32/48/128 PNG
 npm run package        # 生成 dist/typebolt-<version>.zip（manifest.json、_locales/、icons/、src/、LICENSE）
+npm run store-assets   # 用真实扩展渲染商店截图、宣传图与商店图标到 dist/store/
 ```
+
+上架 Chrome 应用商店所需的文案、权限理由与数据披露见 [docs/STORE.md](docs/STORE.md)。
 
 `tests/e2e/real-editors.spec.js` 用真实的编辑器框架（ProseMirror、Lexical、Quill、Draft.js、Slate、React 受控 input / textarea）做回归，断言读取的是编辑器自己的数据模型而不只是 DOM。这些夹具的源码在 `tests/fixtures/editors-src/`，由 esbuild 在 E2E 启动前（`globalSetup`）打包到 `tests/fixtures/dist/`（已 gitignore）。Draft.js 要求 React ≤ 18，所以第二个页面用别名的 React 18；仓库里的 `.npmrc` 设置了 `legacy-peer-deps=true` 来容忍这些对等依赖冲突。
 

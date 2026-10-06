@@ -14,6 +14,13 @@ test('en and zh_CN define exactly the same keys', () => {
   assert.deepEqual(Object.keys(en).sort(), Object.keys(zh).sort());
 });
 
+test('extension name and description fit the Chrome Web Store limits (75 / 132 chars)', () => {
+  for (const [lang, cat] of [['en', en], ['zh_CN', zh]]) {
+    assert.ok([...cat.extName.message].length <= 75, `${lang} extName`);
+    assert.ok([...cat.extDescription.message].length <= 132, `${lang} extDescription`);
+  }
+});
+
 test('every message has non-empty text and matching placeholders', () => {
   for (const k of Object.keys(en)) {
     assert.ok(en[k].message && zh[k].message, k);
@@ -64,7 +71,7 @@ test('manifest __MSG_ references exist and referenced files are present', () => 
   const text = JSON.stringify(manifest);
   for (const m of text.matchAll(/__MSG_([A-Za-z0-9_]+)__/g)) assert.ok(en[m[1]], m[1]);
   assert.equal(manifest.manifest_version, 3);
-  assert.deepEqual([...manifest.permissions].sort(), ['activeTab', 'scripting', 'storage']);
+  assert.deepEqual([...manifest.permissions].sort(), ['scripting', 'storage']);
   assert.deepEqual(manifest.host_permissions, ['<all_urls>']);
   const files = [
     manifest.background.service_worker, manifest.options_ui.page, manifest.action.default_popup,

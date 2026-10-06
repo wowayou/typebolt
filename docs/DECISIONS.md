@@ -53,3 +53,10 @@ SPEC（`docs/SPEC.md`）是单一事实来源。以下记录实现中**偏离或
 ## 更名
 
 原名 Snipkey 与 Chrome 应用商店中已有的同类插件 “SnipKey — Text Expander & Snippets” 重名，所有者选定新名 **TypeBolt**（中文名“闪打”）。项目内的标识（全局命名空间、`data-typebolt-ignore` 属性、`typebolt:*` 消息、导出格式 `"format": "typebolt"`、zip 文件名）随之一并改名；因尚未发布，没有旧数据需要兼容。
+
+## 上架准备（0.1.1）
+
+1. **英文简介缩短到 127 字符**：Chrome 应用商店要求 manifest `description` 不超过 132 个字符，原英文简介为 137 个字符，会导致上传被拒。`tests/unit/i18n.test.js` 新增断言，所有语言的名称 ≤ 75、简介 ≤ 132 个字符。
+2. **移除 `activeTab` 权限**（偏离 SPEC 原文，SPEC 已同步）：弹窗通过 `chrome.tabs.query` 读取当前标签页 URL，`<all_urls>` 主机权限已授予读取 http(s) 标签页 URL 的能力，代码中没有其他依赖 `activeTab` 的地方。商店政策要求只申请必需的最小权限，多余权限是常见的拒审原因。已在 Chromium 上实测：只保留 `storage`、`scripting` 时，扩展仍能读到 http 标签页的 URL。
+3. **隐私政策改为如实描述本地处理**：原文写“不读取你在网页中输入的内容”，但内容脚本确实会在本地读取光标前最多 `maxLen + 2` 个字符。商店的用户数据 FAQ 要求即使只在本地处理也必须披露，因此隐私政策与后台“数据使用”勾选项（见 `docs/STORE.md`）改为一致的描述。
+4. 版本号升为 0.1.1：GitHub 上的 v0.1.0 zip 含超长简介，不能直接提交商店。

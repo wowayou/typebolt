@@ -3,7 +3,7 @@
     "message": "TypeBolt - Text Expander & Prompt Library"
   },
   "extDescription": {
-    "message": "Type a short code like ;thx anywhere and it expands into your saved text. 100% local, no account, AI prompt templates with fill-in forms."
+    "message": "Type a short code like ;thx anywhere to expand your saved text. AI prompt templates with fill-in forms. 100% local, no account."
   },
   "overlayInsert": {
     "message": "Insert (Enter)"

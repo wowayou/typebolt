@@ -67,7 +67,7 @@ typebolt/
 ```
 
 ### 3.3 manifest 要点
-- `permissions`: `storage`, `scripting`, `activeTab`；`host_permissions`: `<all_urls>`（与 content script 覆盖面一致，不新增警告）。**不要** `tabs`、`clipboardRead`、`offscreen`。
+- `permissions`: `storage`, `scripting`（不需要 `activeTab`：`<all_urls>` 主机权限已能读取标签页 URL，见 DECISIONS“上架准备”）；`host_permissions`: `<all_urls>`（与 content script 覆盖面一致，不新增警告）。**不要** `tabs`、`clipboardRead`、`offscreen`。
 - `content_scripts`: `matches: ["<all_urls>"]`，`all_frames: true`，`match_about_blank: true`，`run_at: "document_idle"`，按顺序加载 engine.js → form-overlay.js → content.js。
 - `commands._execute_action.suggested_key`: `Ctrl+Shift+Period` / mac `Command+Shift+Period`。
 - `options_ui`: `{ page, open_in_tab: true }`；`action.default_popup`。
@@ -164,7 +164,7 @@ meta:     { schemaVersion: 1, installedAt: number }
 ### 3.11 Popup
 - 顶部：搜索框（自动聚焦，`data-typebolt-ignore`）；统计一行（“已展开 X 次 · 约节省 Y 分钟”）。
 - 列表：名称 + 短码 + 预览；↑↓ 选择，Enter/点击 → 复制渲染文本到剪贴板（含 `{input}` 时在 popup 内显示内联填空后再复制；`{cursor}` 移除），显示“已复制”反馈。
-- 底部：全局开关；“在 {hostname} 上启用” 开关（用 `activeTab` 取当前标签 URL；非 http(s) 页面隐藏）；“管理片段” 链接。
+- 底部：全局开关；“在 {hostname} 上启用” 开关（用 `chrome.tabs.query` 取当前标签 URL，由 `<all_urls>` 主机权限授权；非 http(s) 页面隐藏）；“管理片段” 链接。
 
 ### 3.12 UI 设计方向
 冷静、实用、键盘优先（参考 Raycast / Linear 的克制感）；系统字体栈；一个强调色；支持亮/暗色；空状态与错误状态有设计；popup 宽约 380px。
@@ -214,7 +214,7 @@ meta:     { schemaVersion: 1, installedAt: number }
 ### 质量 / 上架
 - AC31 [M] 所有用户可见文案来自 `_locales`（en、zh_CN 键集合一致——可加 [U] 校验两份 messages.json 键一致、HTML 中 `data-i18n` 引用的键都存在）。
 - AC32 `npm test` 运行单元 + E2E 全部通过（无头）；`npm run package` 生成 `dist/typebolt-<version>.zip`，仅含 `manifest.json`、`_locales/`、`icons/`、`src/`、`LICENSE`；zip 内 manifest 可被 Chrome 加载。
-- AC33 [M] 无网络请求、无 `eval`/`new Function`/远程脚本、无以用户内容拼接 `innerHTML`；权限仅 `storage`、`scripting`、`activeTab` + `<all_urls>` host。
+- AC33 [M] 无网络请求、无 `eval`/`new Function`/远程脚本、无以用户内容拼接 `innerHTML`；权限仅 `storage`、`scripting` + `<all_urls>` host。
 - AC34 [M] 内容脚本每次按键工作量与短码最大长度相关，不随文档大小增长。
 - AC35 [M] README（中文）：功能、安装（加载未打包扩展）、语法、示例、已知限制（Google Docs、email 输入框、closed shadow root、页面捕获阶段快捷键）、隐私说明、测试与打包命令、商业化路线简述；`docs/PRIVACY.md` 可直接作为商店隐私政策。
 
