@@ -1,0 +1,289 @@
+{
+  "extName": {
+    "message": "TypeBolt 闪打 - 文本快捷短语与提示词库"
+  },
+  "extDescription": {
+    "message": "在任意输入框输入 ;thx 这样的短码，即刻展开为预设文本。完全本地、无需账号，支持带填空表单的 AI 提示词模板。"
+  },
+  "overlayInsert": {
+    "message": "插入 (Enter)"
+  },
+  "overlayCancel": {
+    "message": "取消 (Esc)"
+  },
+  "err_shortcut_empty": {
+    "message": "请输入短码，例如 ;thx"
+  },
+  "err_shortcut_too_short": {
+    "message": "短码至少需要 2 个字符"
+  },
+  "err_shortcut_too_long": {
+    "message": "短码最多 32 个字符"
+  },
+  "err_shortcut_whitespace": {
+    "message": "短码不能包含空格或换行"
+  },
+  "err_shortcut_duplicate": {
+    "message": "已有其他片段使用了这个短码"
+  },
+  "err_prefix_conflict": {
+    "message": "与其他短码冲突（其中一个是另一个的开头），较长的短码将永远无法触发"
+  },
+  "err_content_empty": {
+    "message": "内容不能为空"
+  },
+  "err_invalid_item": {
+    "message": "不是有效的片段条目"
+  },
+  "err_invalid_json": {
+    "message": "该文件不是有效的 JSON"
+  },
+  "err_invalid_format": {
+    "message": "这不是 TypeBolt 导出文件"
+  },
+  "optionsTitle": {
+    "message": "TypeBolt - 管理片段"
+  },
+  "tabSnippets": {
+    "message": "片段"
+  },
+  "tabSettings": {
+    "message": "设置"
+  },
+  "statUses": {
+    "message": "展开次数"
+  },
+  "statChars": {
+    "message": "节省字符"
+  },
+  "statMinutes": {
+    "message": "节省时间（约，分钟）"
+  },
+  "welcomeTitle": {
+    "message": "快速上手"
+  },
+  "welcomeStep1": {
+    "message": "在任意网页的输入框里输入 ;thx 这样的短码，它会立刻展开成预设文本。"
+  },
+  "welcomeStep2": {
+    "message": "在下方添加或编辑你自己的片段。短码区分大小写，且不能互相包含开头。"
+  },
+  "welcomeStep3": {
+    "message": "用 {input:标签} 弹出填空表单，用 {cursor} 指定光标位置，用 {date}、{time} 插入当前日期和时间。"
+  },
+  "welcomeTryLabel": {
+    "message": "在这里试一试"
+  },
+  "welcomeTryHint": {
+    "message": "在输入框中输入 $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "welcomeTryPlaceholder": {
+    "message": "在此输入短码..."
+  },
+  "searchPlaceholder": {
+    "message": "搜索片段"
+  },
+  "newSnippet": {
+    "message": "新建片段"
+  },
+  "listEmpty": {
+    "message": "还没有片段，创建第一个吧。"
+  },
+  "listNoResults": {
+    "message": "没有匹配的片段。"
+  },
+  "usesCount": {
+    "message": "使用 $P1$ 次",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "editorEmptyTitle": {
+    "message": "选择一个片段"
+  },
+  "editorEmptyBody": {
+    "message": "从左侧列表选择片段，或新建一个。"
+  },
+  "editorNewTitle": {
+    "message": "新片段"
+  },
+  "editorEditTitle": {
+    "message": "编辑片段"
+  },
+  "fieldName": {
+    "message": "名称"
+  },
+  "fieldShortcut": {
+    "message": "短码"
+  },
+  "fieldContent": {
+    "message": "内容"
+  },
+  "namePlaceholder": {
+    "message": "例如：感谢"
+  },
+  "shortcutPlaceholder": {
+    "message": ";thx"
+  },
+  "contentPlaceholder": {
+    "message": "短码展开后的文本"
+  },
+  "insertPlaceholders": {
+    "message": "插入占位符"
+  },
+  "previewTitle": {
+    "message": "预览"
+  },
+  "previewEmpty": {
+    "message": "暂无可预览内容"
+  },
+  "btnSave": {
+    "message": "保存"
+  },
+  "btnDelete": {
+    "message": "删除"
+  },
+  "btnDuplicate": {
+    "message": "复制"
+  },
+  "btnCancel": {
+    "message": "取消"
+  },
+  "deleteConfirmText": {
+    "message": "删除这个片段？此操作无法撤销。"
+  },
+  "btnDeleteConfirm": {
+    "message": "确认删除"
+  },
+  "toastSaved": {
+    "message": "已保存"
+  },
+  "toastDeleted": {
+    "message": "已删除"
+  },
+  "toastDuplicated": {
+    "message": "已复制，请设置新的短码后保存。"
+  },
+  "duplicateSuffix": {
+    "message": "（副本）"
+  },
+  "settingsTitle": {
+    "message": "展开设置"
+  },
+  "settingEnabled": {
+    "message": "启用 TypeBolt"
+  },
+  "settingEnabledHint": {
+    "message": "全局开启或关闭展开。"
+  },
+  "settingSites": {
+    "message": "禁用站点"
+  },
+  "settingSitesHint": {
+    "message": "这些站点及其子域名下不会展开。可以直接粘贴完整网址。"
+  },
+  "settingSitesPlaceholder": {
+    "message": "example.com"
+  },
+  "btnAdd": {
+    "message": "添加"
+  },
+  "btnRemove": {
+    "message": "移除"
+  },
+  "siteInvalid": {
+    "message": "这不是有效的站点地址"
+  },
+  "siteEmpty": {
+    "message": "没有禁用的站点"
+  },
+  "dataTitle": {
+    "message": "备份与分享"
+  },
+  "dataHint": {
+    "message": "把片段导出为 JSON 文件，或导入文件并合并到当前片段库。"
+  },
+  "btnImport": {
+    "message": "导入 JSON"
+  },
+  "btnExport": {
+    "message": "导出 JSON"
+  },
+  "importResult": {
+    "message": "新增 $P1$ 个，跳过 $P2$ 个",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "importSkipped": {
+    "message": "已跳过"
+  },
+  "importFailed": {
+    "message": "导入失败，数据未做任何更改。"
+  },
+  "popupSearchPlaceholder": {
+    "message": "搜索片段..."
+  },
+  "popupStats": {
+    "message": "已展开 $P1$ 次 · 约节省 $P2$ 分钟",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupEmpty": {
+    "message": "还没有片段"
+  },
+  "popupNoMatch": {
+    "message": "没有匹配项"
+  },
+  "popupCopied": {
+    "message": "已复制"
+  },
+  "popupCopyFailed": {
+    "message": "复制失败"
+  },
+  "popupGlobal": {
+    "message": "启用 TypeBolt"
+  },
+  "popupSite": {
+    "message": "在 $P1$ 上启用",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupManage": {
+    "message": "管理片段"
+  },
+  "popupFillCopy": {
+    "message": "复制 (Enter)"
+  },
+  "popupFillCancel": {
+    "message": "返回 (Esc)"
+  },
+  "popupHint": {
+    "message": "Enter 复制"
+  },
+  "starterPackLang": {
+    "message": "zh",
+    "description": "Internal: which starter snippet pack to install (en or zh). Not shown to users."
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TypeBolt</title>
+  <link rel="stylesheet" href="../shared/ui.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="root" data-typebolt-ignore>
+    <header class="head">
+      <input type="search" id="search" autocomplete="off" spellcheck="false" autofocus data-i18n-placeholder="popupSearchPlaceholder" data-i18n-aria-label="popupSearchPlaceholder">
+      <p id="stats" class="stats muted"></p>
+    </header>
+
+    <main>
+      <ul id="list" class="list" role="listbox"></ul>
+      <p id="empty" class="empty muted" hidden></p>
+
+      <form id="fill" class="fill" hidden novalidate>
+        <h2 id="fill-title" class="fill-title"></h2>
+        <div id="fill-fields"></div>
+        <div class="fill-actions">
+          <button type="button" class="btn" id="fill-cancel" data-i18n="popupFillCancel"></button>
+          <button type="submit" class="btn primary" id="fill-copy" data-i18n="popupFillCopy"></button>
+        </div>
+      </form>
+    </main>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <footer class="foot">
+      <label class="toggle"><span data-i18n="popupGlobal"></span><span class="switch"><input type="checkbox" id="tog-global"><span class="track"></span></span></label>
+      <label class="toggle" id="site-row" hidden><span id="site-label"></span><span class="switch"><input type="checkbox" id="tog-site"><span class="track"></span></span></label>
+      <button type="button" class="btn ghost manage" id="manage" data-i18n="popupManage"></button>
+    </footer>
+  </div>
+
+  <script src="../shared/engine.js"></script>
+  <script src="../shared/storage.js"></script>
+  <script src="../shared/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

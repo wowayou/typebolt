@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>editors</title>
+<style>body{font:14px sans-serif;margin:20px} input,textarea,[contenteditable]{display:block;margin:8px 0;width:360px;border:1px solid #888;padding:4px;min-height:22px}</style>
+</head><body>
+<input id="text" type="text">
+<input id="plain">
+<input id="search" type="search">
+<input id="url" type="url">
+<input id="tel" type="tel">
+<input id="password" type="password">
+<input id="email" type="email">
+<input id="readonly" readonly value="">
+<textarea id="ta" rows="4"></textarea>
+<div id="ce" contenteditable="true"></div>
+<div id="ce-inline" contenteditable="true"></div>
+<div id="ignored" data-typebolt-ignore><input id="ignored-input" type="text"></div>
+<input id="suppressed" type="text">
+<script src="editors.js"></script>
+</body></html>

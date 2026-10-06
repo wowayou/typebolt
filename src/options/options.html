@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="optionsTitle">TypeBolt</title>
+  <link rel="stylesheet" href="../shared/ui.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="../../icons/icon48.png" width="24" height="24" alt=""><span>TypeBolt</span></div>
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" class="tab" id="tab-snippets" data-tab="snippets" aria-selected="true" data-i18n="tabSnippets"></button>
+      <button type="button" role="tab" class="tab" id="tab-settings" data-tab="settings" aria-selected="false" data-i18n="tabSettings"></button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <details id="welcome" class="card welcome">
+      <summary data-i18n="welcomeTitle"></summary>
+      <div class="welcome-body">
+        <ol>
+          <li data-i18n="welcomeStep1"></li>
+          <li data-i18n="welcomeStep2"></li>
+          <li data-i18n="welcomeStep3"></li>
+        </ol>
+        <div class="tryit">
+          <label for="tryit" class="tryit-label" data-i18n="welcomeTryLabel"></label>
+          <input type="text" id="tryit" autocomplete="off" spellcheck="false" data-i18n-placeholder="welcomeTryPlaceholder">
+          <p class="muted" id="tryit-hint"></p>
+        </div>
+      </div>
+    </details>
+
+    <section class="stats-strip" aria-label="Statistics">
+      <div class="stat"><span class="stat-num" id="stat-uses">0</span><span class="stat-label" data-i18n="statUses"></span></div>
+      <div class="stat"><span class="stat-num" id="stat-chars">0</span><span class="stat-label" data-i18n="statChars"></span></div>
+      <div class="stat"><span class="stat-num" id="stat-minutes">0</span><span class="stat-label" data-i18n="statMinutes"></span></div>
+    </section>
+
+    <div id="manage-root" data-typebolt-ignore>
+      <section id="panel-snippets" class="layout" role="tabpanel">
+        <aside class="list-pane card">
+          <div class="list-head">
+            <input type="search" id="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder">
+            <button type="button" class="btn primary" id="btn-new" data-i18n="newSnippet"></button>
+          </div>
+          <ul id="list" class="list" role="listbox" aria-label="Snippets"></ul>
+          <p id="list-empty" class="empty muted" hidden></p>
+        </aside>
+
+        <section class="editor-pane card">
+          <div id="editor-empty" class="editor-empty">
+            <h2 data-i18n="editorEmptyTitle"></h2>
+            <p class="muted" data-i18n="editorEmptyBody"></p>
+          </div>
+          <form id="editor" novalidate hidden>
+            <h2 id="editor-title" class="editor-title"></h2>
+            <div class="row">
+              <div class="field grow">
+                <label for="f-name" data-i18n="fieldName"></label>
+                <input type="text" id="f-name" maxlength="80" autocomplete="off" data-i18n-placeholder="namePlaceholder">
+              </div>
+              <div class="field shortcut-field">
+                <label for="f-shortcut" data-i18n="fieldShortcut"></label>
+                <input type="text" id="f-shortcut" class="mono" autocomplete="off" spellcheck="false" data-i18n-placeholder="shortcutPlaceholder" aria-describedby="err-shortcut">
+                <p class="error" id="err-shortcut" role="alert"></p>
+              </div>
+            </div>
+            <div class="field">
+              <div class="label-row">
+                <label for="f-content" data-i18n="fieldContent"></label>
+                <div class="chips" role="group" data-i18n-aria-label="insertPlaceholders">
+                  <button type="button" class="chip mono" data-insert="{cursor}">{cursor}</button>
+                  <button type="button" class="chip mono" data-insert="{date}">{date}</button>
+                  <button type="button" class="chip mono" data-insert="{time}">{time}</button>
+                  <button type="button" class="chip mono" data-insert="{input:Label}" data-select="Label">{input:…}</button>
+                </div>
+              </div>
+              <textarea id="f-content" class="mono" rows="9" spellcheck="false" data-i18n-placeholder="contentPlaceholder" aria-describedby="err-content"></textarea>
+              <p class="error" id="err-content" role="alert"></p>
+            </div>
+            <div class="field">
+              <span class="label" data-i18n="previewTitle"></span>
+              <div id="preview" class="preview" aria-live="polite"></div>
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn primary" id="btn-save" data-i18n="btnSave"></button>
+              <button type="button" class="btn" id="btn-duplicate" data-i18n="btnDuplicate"></button>
+              <span class="spacer"></span>
+              <button type="button" class="btn danger" id="btn-delete" data-i18n="btnDelete"></button>
+            </div>
+            <div id="delete-confirm" class="confirm" hidden role="alertdialog">
+              <span data-i18n="deleteConfirmText"></span>
+              <span class="spacer"></span>
+              <button type="button" class="btn small" id="btn-delete-cancel" data-i18n="btnCancel"></button>
+              <button type="button" class="btn small danger solid" id="btn-delete-confirm" data-i18n="btnDeleteConfirm"></button>
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <section id="panel-settings" class="settings" role="tabpanel" hidden>
+        <div class="card setting">
+          <div class="setting-head">
+            <div>
+              <h2 data-i18n="settingEnabled"></h2>
+              <p class="muted" data-i18n="settingEnabledHint"></p>
+            </div>
+            <label class="switch"><input type="checkbox" id="set-enabled" data-i18n-aria-label="settingEnabled"><span class="track"></span></label>
+          </div>
+        </div>
+
+        <div class="card setting">
+          <h2 data-i18n="settingSites"></h2>
+          <p class="muted" data-i18n="settingSitesHint"></p>
+          <form id="site-form" class="site-form" novalidate>
+            <input type="text" id="site-input" class="mono" autocomplete="off" spellcheck="false" data-i18n-placeholder="settingSitesPlaceholder" aria-describedby="err-site">
+            <button type="submit" class="btn" id="btn-site-add" data-i18n="btnAdd"></button>
+          </form>
+          <p class="error" id="err-site" role="alert"></p>
+          <ul id="site-list" class="site-list"></ul>
+          <p id="site-empty" class="muted" data-i18n="siteEmpty"></p>
+        </div>
+
+        <div class="card setting">
+          <h2 data-i18n="dataTitle"></h2>
+          <p class="muted" data-i18n="dataHint"></p>
+          <div class="actions">
+            <button type="button" class="btn" id="btn-import" data-i18n="btnImport"></button>
+            <button type="button" class="btn" id="btn-export" data-i18n="btnExport"></button>
+            <input type="file" id="import-file" accept=".json,application/json" hidden>
+          </div>
+          <div id="import-result" class="import-result" role="status" hidden></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../shared/engine.js"></script>
+  <script src="../shared/storage.js"></script>
+  <script src="../shared/i18n.js"></script>
+  <script src="../content/form-overlay.js"></script>
+  <script src="../content/content.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

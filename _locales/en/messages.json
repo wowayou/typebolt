@@ -1,0 +1,289 @@
+{
+  "extName": {
+    "message": "TypeBolt - Text Expander & Prompt Library"
+  },
+  "extDescription": {
+    "message": "Type a short code like ;thx anywhere and it expands into your saved text. 100% local, no account, AI prompt templates with fill-in forms."
+  },
+  "overlayInsert": {
+    "message": "Insert (Enter)"
+  },
+  "overlayCancel": {
+    "message": "Cancel (Esc)"
+  },
+  "err_shortcut_empty": {
+    "message": "Enter a shortcut, for example ;thx"
+  },
+  "err_shortcut_too_short": {
+    "message": "Shortcut must be at least 2 characters"
+  },
+  "err_shortcut_too_long": {
+    "message": "Shortcut can be at most 32 characters"
+  },
+  "err_shortcut_whitespace": {
+    "message": "Shortcut cannot contain spaces or line breaks"
+  },
+  "err_shortcut_duplicate": {
+    "message": "Another snippet already uses this shortcut"
+  },
+  "err_prefix_conflict": {
+    "message": "This shortcut overlaps with another one (one is the beginning of the other), so the longer one could never fire"
+  },
+  "err_content_empty": {
+    "message": "Content cannot be empty"
+  },
+  "err_invalid_item": {
+    "message": "Not a valid snippet entry"
+  },
+  "err_invalid_json": {
+    "message": "This file is not valid JSON"
+  },
+  "err_invalid_format": {
+    "message": "This is not a TypeBolt export file"
+  },
+  "optionsTitle": {
+    "message": "TypeBolt - Manage snippets"
+  },
+  "tabSnippets": {
+    "message": "Snippets"
+  },
+  "tabSettings": {
+    "message": "Settings"
+  },
+  "statUses": {
+    "message": "Expansions"
+  },
+  "statChars": {
+    "message": "Characters saved"
+  },
+  "statMinutes": {
+    "message": "Minutes saved (est.)"
+  },
+  "welcomeTitle": {
+    "message": "Getting started"
+  },
+  "welcomeStep1": {
+    "message": "Type a shortcut such as ;thx in any text box on any website and it expands instantly."
+  },
+  "welcomeStep2": {
+    "message": "Add or edit your own snippets below. Shortcuts are case sensitive and must not overlap."
+  },
+  "welcomeStep3": {
+    "message": "Use {input:Label} to pop up a fill-in form, {cursor} to place the caret, {date} and {time} for the current date and time."
+  },
+  "welcomeTryLabel": {
+    "message": "Try it here"
+  },
+  "welcomeTryHint": {
+    "message": "Type $P1$ in the box",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "welcomeTryPlaceholder": {
+    "message": "Type a shortcut here..."
+  },
+  "searchPlaceholder": {
+    "message": "Search snippets"
+  },
+  "newSnippet": {
+    "message": "New snippet"
+  },
+  "listEmpty": {
+    "message": "No snippets yet. Create your first one."
+  },
+  "listNoResults": {
+    "message": "No snippets match your search."
+  },
+  "usesCount": {
+    "message": "$P1$ uses",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "editorEmptyTitle": {
+    "message": "Select a snippet"
+  },
+  "editorEmptyBody": {
+    "message": "Pick a snippet from the list, or create a new one."
+  },
+  "editorNewTitle": {
+    "message": "New snippet"
+  },
+  "editorEditTitle": {
+    "message": "Edit snippet"
+  },
+  "fieldName": {
+    "message": "Name"
+  },
+  "fieldShortcut": {
+    "message": "Shortcut"
+  },
+  "fieldContent": {
+    "message": "Content"
+  },
+  "namePlaceholder": {
+    "message": "e.g. Thank you"
+  },
+  "shortcutPlaceholder": {
+    "message": ";thx"
+  },
+  "contentPlaceholder": {
+    "message": "The text this shortcut expands to"
+  },
+  "insertPlaceholders": {
+    "message": "Insert placeholder"
+  },
+  "previewTitle": {
+    "message": "Preview"
+  },
+  "previewEmpty": {
+    "message": "Nothing to preview yet"
+  },
+  "btnSave": {
+    "message": "Save"
+  },
+  "btnDelete": {
+    "message": "Delete"
+  },
+  "btnDuplicate": {
+    "message": "Duplicate"
+  },
+  "btnCancel": {
+    "message": "Cancel"
+  },
+  "deleteConfirmText": {
+    "message": "Delete this snippet? This cannot be undone."
+  },
+  "btnDeleteConfirm": {
+    "message": "Yes, delete"
+  },
+  "toastSaved": {
+    "message": "Saved"
+  },
+  "toastDeleted": {
+    "message": "Deleted"
+  },
+  "toastDuplicated": {
+    "message": "Duplicated. Pick a new shortcut and save."
+  },
+  "duplicateSuffix": {
+    "message": " (copy)"
+  },
+  "settingsTitle": {
+    "message": "Expansion"
+  },
+  "settingEnabled": {
+    "message": "Enable TypeBolt"
+  },
+  "settingEnabledHint": {
+    "message": "Turn expansion on or off everywhere."
+  },
+  "settingSites": {
+    "message": "Disabled sites"
+  },
+  "settingSitesHint": {
+    "message": "TypeBolt stays off on these sites and their subdomains. You can paste a full URL."
+  },
+  "settingSitesPlaceholder": {
+    "message": "example.com"
+  },
+  "btnAdd": {
+    "message": "Add"
+  },
+  "btnRemove": {
+    "message": "Remove"
+  },
+  "siteInvalid": {
+    "message": "That does not look like a valid site address"
+  },
+  "siteEmpty": {
+    "message": "No disabled sites"
+  },
+  "dataTitle": {
+    "message": "Backup and sharing"
+  },
+  "dataHint": {
+    "message": "Export your snippets to a JSON file, or import a file to merge it with your library."
+  },
+  "btnImport": {
+    "message": "Import JSON"
+  },
+  "btnExport": {
+    "message": "Export JSON"
+  },
+  "importResult": {
+    "message": "Added $P1$, skipped $P2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "importSkipped": {
+    "message": "Skipped"
+  },
+  "importFailed": {
+    "message": "Import failed. Nothing was changed."
+  },
+  "popupSearchPlaceholder": {
+    "message": "Search snippets..."
+  },
+  "popupStats": {
+    "message": "Expanded $P1$ times · saved about $P2$ min",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupEmpty": {
+    "message": "No snippets yet"
+  },
+  "popupNoMatch": {
+    "message": "No matches"
+  },
+  "popupCopied": {
+    "message": "Copied"
+  },
+  "popupCopyFailed": {
+    "message": "Could not copy"
+  },
+  "popupGlobal": {
+    "message": "TypeBolt enabled"
+  },
+  "popupSite": {
+    "message": "Enabled on $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupManage": {
+    "message": "Manage snippets"
+  },
+  "popupFillCopy": {
+    "message": "Copy (Enter)"
+  },
+  "popupFillCancel": {
+    "message": "Back (Esc)"
+  },
+  "popupHint": {
+    "message": "Enter to copy"
+  },
+  "starterPackLang": {
+    "message": "en",
+    "description": "Internal: which starter snippet pack to install (en or zh). Not shown to users."
+  }
+}

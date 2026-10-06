@@ -1,0 +1,38 @@
+{
+  "name": "typebolt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Text expander and AI prompt library (Chrome MV3 extension)",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "node --test \"tests/unit/*.test.js\"",
+    "test:e2e": "playwright test",
+    "package": "node scripts/package.mjs",
+    "icons": "node scripts/gen-icons.mjs"
+  },
+  "devDependencies": {
+    "@lexical/history": "0.52.0",
+    "@lexical/rich-text": "0.52.0",
+    "@playwright/test": "1.62.1",
+    "draft-js": "0.11.7",
+    "esbuild": "0.28.2",
+    "lexical": "0.52.0",
+    "prosemirror-commands": "1.7.2",
+    "prosemirror-history": "1.5.1",
+    "prosemirror-keymap": "1.2.3",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-schema-basic": "1.2.5",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-view": "1.42.6",
+    "quill": "2.0.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-dom18": "npm:react-dom@18.3.1",
+    "react18": "npm:react@18.3.1",
+    "slate": "0.126.2",
+    "slate-dom": "0.126.0",
+    "slate-history": "0.113.1",
+    "slate-react": "0.127.1"
+  }
+}
